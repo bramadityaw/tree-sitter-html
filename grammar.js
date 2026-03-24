@@ -74,28 +74,28 @@ module.exports = grammar({
     start_tag: $ => seq(
       '<',
       alias($._start_tag_name, $.tag_name),
-      repeat($.attribute),
+      field('attribute', repeat($.attribute)),
       '>',
     ),
 
     script_start_tag: $ => seq(
       '<',
       alias($._script_start_tag_name, $.tag_name),
-      repeat($.attribute),
+      field('attribute', repeat($.attribute)),
       '>',
     ),
 
     style_start_tag: $ => seq(
       '<',
       alias($._style_start_tag_name, $.tag_name),
-      repeat($.attribute),
+      field('attribute', repeat($.attribute)),
       '>',
     ),
 
     self_closing_tag: $ => seq(
       '<',
       alias($._start_tag_name, $.tag_name),
-      repeat($.attribute),
+      field('attribute', repeat($.attribute)),
       '/>',
     ),
 
